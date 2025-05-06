@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -173,7 +173,7 @@ namespace EmployeeManagementSystem
                 catch (Exception e) { Console.WriteLine("Error : " + e.GetType().Name); }
                 Console.WriteLine();
                 string departmentEmployee = Console.ReadLine();
-                if (department.Contains(departmentEmployee))
+                if (department.Any(d => d.Equals(departmentEmployee, StringComparison.OrdinalIgnoreCase)))
                 {
                     return departmentEmployee;
                 }
@@ -216,7 +216,7 @@ namespace EmployeeManagementSystem
                 string input = Console.ReadLine().ToLower();
                 if (input == "yes") return true;
                 else if (input == "no") return false;
-                Console.WriteLine("Please the Enter \"Yes\" or \"No\"");
+                Console.WriteLine("Please Enter \"Yes\" or \"No\"");
             }
         }
         // check the Leave 
@@ -257,7 +257,7 @@ namespace EmployeeManagementSystem
                 string input = Console.ReadLine().ToLower();
                 if (input == "yes") return true;
                 else if (input == "no") return false;
-                Console.WriteLine("Please the Enter \"Yes\" or \"No\"");
+                Console.WriteLine("Please Enter \"Yes\" or \"No\"");
             }
         }
         // Display the Employee Detail
